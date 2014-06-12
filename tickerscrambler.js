@@ -11,8 +11,9 @@ function TickerScrambler(element, options) {
 	if (!element) return;
 	// Make sure we are dealing with the right nodeType
 	if (element.nodeType != 1) return;
-	
-	option = options || {};
+	// Make sure we have word list in options
+	if (!options) return;
+	if (!options.list || !options.list.length) return;
 	
 	var index = options.index || 0; // Starting index
 	var speed = options.speed || 33; // Scrambling speed
@@ -42,12 +43,12 @@ function TickerScrambler(element, options) {
 	}
 
 	function get_next_index() {
-		return (index < words.length - 1) ? index + 1 : 0;
+		return (index < list.length - 1) ? index + 1 : 0;
 	}
 
 	function reveal_text() {
-		if (char_cursor < words[index].length) {
-			var character = words[index].substr(char_cursor, 1);
+		if (char_cursor < list[index].length) {
+			var character = list[index].substr(char_cursor, 1);
 			var rand_length = element.textContent.length - char_cursor - 1;
 			var rand_text = gen_random_string(rand_length);
 		
@@ -55,17 +56,17 @@ function TickerScrambler(element, options) {
 			char_cursor++;
 		}
 		else if (char_cursor < element.textContent.length) {
-			var rand_length = (element.textContent.length - words[index].length - 1);
+			var rand_length = (element.textContent.length - list[index].length - 1);
 			var rand_text = gen_random_string(rand_length);
 		
-			element.textContent = element.textContent.substr(0, words[index].length) + rand_text;
+			element.textContent = element.textContent.substr(0, list[index].length) + rand_text;
 		
-			if (element.textContent.length == words[index].length) {
+			if (element.textContent.length == list[index].length) {
 				char_cursor++;
 			}
 		}
 	
-		if (char_cursor >= words[index].length && char_cursor >= element.textContent.length) {
+		if (char_cursor >= list[index].length && char_cursor >= element.textContent.length) {
 			char_cursor = 0;
 			index = get_next_index();
 			clearInterval(timer);
