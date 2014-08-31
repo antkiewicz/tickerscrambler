@@ -1,4 +1,4 @@
-# Tickercrambler v0.1.1
+# TickerScrambler v0.1.1
 
 TickerScrambler is a text ticker display that uses text scrambling to update text.
 
