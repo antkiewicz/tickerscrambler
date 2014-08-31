@@ -20,6 +20,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 
-	// Default tast(s).
-	grunt.registerTask('default', ['uglify', 'jshint']);
+	// Default task.
+	grunt.registerTask('default', ['jshint', 'uglify']);
+	// Test task
+	grunt.registerTask('test', ['jshint']);
 }
