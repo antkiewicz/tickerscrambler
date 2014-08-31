@@ -1,6 +1,6 @@
-# TickerScrambler.js v0.1
+# tickerscrambler.js v0.1
 
-TickerScrambler.js is a text ticker display that uses text scrambling to update text.
+tickerscrambler.js is a text ticker display that uses text scrambling to update text.
 
 ### Issues + Todos
 
