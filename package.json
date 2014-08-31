@@ -1,9 +1,9 @@
 {
   "name": "tickerscrambler",
   "title": "TickerScrambler",
-  "version": "0.1",
+  "version": "0.1.1",
   "description": "A text ticker display that uses text scrambling to update text.",
-  "main": "Gruntfile.js",
+  "main": "dist/tickerscrambler.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
