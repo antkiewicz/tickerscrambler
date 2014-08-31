@@ -47,17 +47,18 @@ function TickerScrambler(element, options) {
 	}
 
 	function reveal_text() {
+		var rand_length, rand_text;
 		if (char_cursor < list[index].length) {
 			var character = list[index].substr(char_cursor, 1);
-			var rand_length = element.textContent.length - char_cursor - 1;
-			var rand_text = gen_random_string(rand_length);
+			rand_length = element.textContent.length - char_cursor - 1;
+			rand_text = gen_random_string(rand_length);
 		
 			element.textContent = element.textContent.substr(0, char_cursor) + character + rand_text;
 			char_cursor++;
 		}
 		else if (char_cursor < element.textContent.length) {
-			var rand_length = (element.textContent.length - list[index].length - 1);
-			var rand_text = gen_random_string(rand_length);
+			rand_length = (element.textContent.length - list[index].length - 1);
+			rand_text = gen_random_string(rand_length);
 		
 			element.textContent = element.textContent.substr(0, list[index].length) + rand_text;
 		
@@ -81,7 +82,7 @@ function TickerScrambler(element, options) {
 	
 		char_cursor--;
 	
-		if (char_cursor == 0) {
+		if (char_cursor === 0) {
 			clearInterval(timer);
 			next();
 		}
@@ -104,8 +105,8 @@ if (window.jQuery) {
 	(function() {
 		$.fn.TickerScrambler = function(options) {
 			return this.each(function() {
-				$(this).data('TickerScrambler', new TickerScrambler($(this)[0], options))
+				$(this).data('TickerScrambler', new TickerScrambler($(this)[0], options));
 			});
-		}
+		};
 	})(window.jQuery);
 }
