@@ -3,15 +3,15 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		jshint: {
-			all: '<%= pkg.name %>/<%= pkg.name %>.js'
+			all: '<%= pkg.name %>.js'
 		},
 		uglify: {
 			options: {
 				banner: '/* <%= pkg.name %>.js v<%= pkg.version %>, Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>, <%= pkg.license %> License */\n'
 			},
 			build: {
-				src: '<%= pkg.name %>/<%= pkg.name %>.js',
-				dest: '<%= pkg.name %>/<%= pkg.name %>.min.js'
+				src: '<%= pkg.name %>.js',
+				dest: '<%= pkg.name %>.min.js'
 			}
 		}
 	});
