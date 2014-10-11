@@ -11,6 +11,12 @@ $('.ticker').TickerScrambler({
 });
 ```
 
+```js
+// Standalone
+var el = document.getElementById('ticker');
+var ticker = new TickerScrambler(el, {list: ['One','Two','Three']});
+```
+
 ## Options
 
 Key		| Default	| Description
@@ -24,4 +30,3 @@ speed   | 33        | Speed at which characters are changed. 33 is about 30fps
 ## Issues + Todos
 
 - Random flag does not yet work
-- Character set is not yet configurable
