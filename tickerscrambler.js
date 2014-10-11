@@ -20,6 +20,8 @@ function TickerScrambler(element, options) {
 	var pause = options.pause || 1000; // Pause between going to next list item
 	var random = options.random || false;// Pick random word
 	var list = options.list || []; // List of item to display
+	// Character set used for transitions
+	var charset = options.charset || 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 
 	var timer = null;
 	var char_cursor = null;
@@ -91,7 +93,7 @@ function TickerScrambler(element, options) {
 	function gen_random_string(length) {
 		var string = '';
 		for (var i = 0; i < length; i++) {
-			string += String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+			string += charset.charAt(Math.floor(Math.random() * charset.length));
 		}
 	
 		return string;
