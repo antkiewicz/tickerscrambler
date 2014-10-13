@@ -30,4 +30,4 @@ speed   | 33        | Speed at which characters are changed. 33 is about 30fps
 
 ## Issues + Todos
 
-- Random flag does not yet work
+None
