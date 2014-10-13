@@ -45,6 +45,9 @@ function TickerScrambler(element, options) {
 	}
 
 	function get_next_index() {
+		if (random) {
+			return Math.floor(list.length * Math.random());
+		}
 		return (index < list.length - 1) ? index + 1 : 0;
 	}
 
