@@ -1,5 +1,5 @@
 /*
- * tickerscrambler.js v0.1.1
+ * tickerscrambler.js v0.1.2
  *
  * Lukasz Antkiewicz
  * Copyright (c) 2014, MIT License
