@@ -1,7 +1,7 @@
 {
   "name": "tickerscrambler",
   "title": "TickerScrambler",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A text ticker display that uses text scrambling to update text.",
   "main": "dist/tickerscrambler.min.js",
   "scripts": {

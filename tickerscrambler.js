@@ -107,7 +107,7 @@ function TickerScrambler(element, options) {
 }
 
 if (window.jQuery) {
-	(function() {
+	(function($) {
 		$.fn.TickerScrambler = function(options) {
 			return this.each(function() {
 				$(this).data('TickerScrambler', new TickerScrambler($(this)[0], options));
